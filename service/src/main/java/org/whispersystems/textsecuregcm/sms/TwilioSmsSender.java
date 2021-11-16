@@ -100,6 +100,8 @@ public class TwilioSmsSender {
   public CompletableFuture<Boolean> deliverSmsVerification(String destination, Optional<String> clientType, String verificationCode) {
     Map<String, String> requestParameters = new HashMap<>();
     requestParameters.put("To", destination);
+    
+    logger.info("\n\n ------>>>>>> Your OTP is :" + verificationCode);
 
     if (Util.isEmpty(messagingServicesId)) {
       requestParameters.put("From", getRandom(random, numbers));
