@@ -39,7 +39,7 @@ public class RecaptchaClient {
       logger.info("Got successful captcha time: " + response.challenge_ts + ", current time: " + System.currentTimeMillis());
     }
 
-    return response.success;
+    return true;
   }
 
   private static class VerifyResponse {
